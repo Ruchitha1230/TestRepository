@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: mainflow
+  labels:
+    app.kubernetes.io/name: mainflow
+    app.kubernetes.io/part-of: mainflow-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: mainflow
